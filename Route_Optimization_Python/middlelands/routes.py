@@ -27,12 +27,18 @@ import csv
 import math
 import random
 import time
+import os
 from collections import defaultdict
 from itertools import combinations
 from copy import deepcopy
 
+# Repo root (so script works regardless of current working directory)
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
 # ── Config ─────────────────────────────────────────────────────────
-INPUT_FILE    = "clusters.csv"
+INPUT_FILE    = os.path.join(DATA_DIR, "clusters.csv")
 RANDOM_SEED   = 42
 RR_RESTARTS   = 50        # how many random restarts for Algorithm 3
 
@@ -381,9 +387,9 @@ def save_routes_csv(filename, algo_key):
         writer.writerows(rows)
     print(f"\n  Saved: {filename}  ({len(rows)} rows)")
 
-save_routes_csv("routes_nn.csv",    "nn")
-save_routes_csv("routes_2opt.csv",  "2opt")
-save_routes_csv("routes_rr2opt.csv","rr")
+save_routes_csv(os.path.join(DATA_DIR, "routes_nn.csv"),    "nn")
+save_routes_csv(os.path.join(DATA_DIR, "routes_2opt.csv"),  "2opt")
+save_routes_csv(os.path.join(DATA_DIR, "routes_rr2opt.csv"),"rr")
 
 
 # ══════════════════════════════════════════════════════════════════

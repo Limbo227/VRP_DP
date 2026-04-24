@@ -21,8 +21,15 @@ import json
 import webbrowser
 import os
 
+# Repo root (so script works regardless of current working directory)
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+HTML_DIR = os.path.join(REPO_ROOT, "html")
+os.makedirs(HTML_DIR, exist_ok=True)
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
 # ── Read the CSV ──────────────────────────────────────────────────
-input_file = "deliveries_london.csv"
+input_file = os.path.join(DATA_DIR, "deliveries_london.csv")
 
 if not os.path.exists(input_file):
     print(f"ERROR: '{input_file}' not found.")
@@ -298,7 +305,7 @@ html = f"""<!DOCTYPE html>
 """
 
 # ── Write the HTML file ───────────────────────────────────────────
-output_file = "delivery_map.html"
+output_file = os.path.join(HTML_DIR, "delivery_map.html")
 with open(output_file, "w", encoding="utf-8") as f:
     f.write(html)
 

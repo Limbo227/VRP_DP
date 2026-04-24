@@ -27,9 +27,15 @@ import json
 import csv
 import random
 import time
+import os
 
 # ── Reproducibility ───────────────────────────────────────────────
 random.seed(42)
+
+# Repo root (so script works regardless of current working directory)
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
 
 # ── Config ────────────────────────────────────────────────────────
 NUM_DELIVERIES   = 120   # increased for a richer dataset
@@ -248,7 +254,7 @@ all_rows = [depot_row] + rows
 
 
 # ── Step 4: Save CSV ──────────────────────────────────────────────
-output_file = "deliveries_london.csv"
+output_file = os.path.join(DATA_DIR, "deliveries_london.csv")
 fieldnames  = ["delivery_id", "customer_name", "postcode",
                "latitude", "longitude", "demand", "priority"]
 

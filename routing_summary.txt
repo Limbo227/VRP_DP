@@ -2,7 +2,7 @@
   ROUTING SUMMARY — DPD Hinckley
 ==============================================================
 
-  Input file : clusters.csv
+  Input file : d:\VS-Projects\VRP\data\clusters.csv
   Depot      : LE10 3BQ
   Total stops: 120
   Vans       : 12
@@ -11,9 +11,9 @@
   ALGORITHM COMPARISON (total km across all vans)
   Algorithm                   Total km     vs NN      Time
   -------------------------------------------------------
-  Nearest Neighbour             873.70  baseline  0.0014s
+  Nearest Neighbour             873.70  baseline  0.0012s
   2-opt (from NN)               838.30      4.1%  0.0407s
-  Random Restart 2-opt          833.47      4.6%  2.3214s
+  Random Restart 2-opt          833.47      4.6%  2.2072s
 
   PER-VAN BREAKDOWN
   Van   Stops        NN     2-opt   RR-2opt      Best

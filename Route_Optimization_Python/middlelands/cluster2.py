@@ -36,6 +36,13 @@ import webbrowser
 import numpy as np
 from sklearn.cluster import KMeans
 
+# Repo root (so script works regardless of current working directory)
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+HTML_DIR = os.path.join(REPO_ROOT, "html")
+os.makedirs(HTML_DIR, exist_ok=True)
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
 # ── Config ────────────────────────────────────────────────────────
 MAX_STOPS_PER_VEHICLE = 20
 RANDOM_SEED           = 42
@@ -126,7 +133,7 @@ def split_oversized(stops, max_size):
 
 
 # ── Step 1: Load data ─────────────────────────────────────────────
-input_file = "deliveries.csv"
+input_file = os.path.join(DATA_DIR, "deliveries.csv")
 
 if not os.path.exists(input_file):
     print(f"ERROR: '{input_file}' not found.")
@@ -218,7 +225,7 @@ all_rows         = [depot] + stops
 fieldnames       = ["delivery_id", "customer_name", "postcode",
                     "latitude", "longitude", "demand", "priority", "cluster"]
 
-output_csv = "clusters.csv"
+output_csv = os.path.join(DATA_DIR, "clusters.csv")
 with open(output_csv, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
@@ -388,7 +395,7 @@ legend.addTo(map);
 </body>
 </html>"""
 
-map_file = "cluster_map.html"
+map_file = os.path.join(HTML_DIR, "cluster_map.html")
 with open(map_file, "w", encoding="utf-8") as f:
     f.write(html)
 

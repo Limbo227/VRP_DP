@@ -28,6 +28,13 @@ import json
 import os
 import webbrowser
 
+# Repo root (so script works regardless of current working directory)
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+HTML_DIR = os.path.join(REPO_ROOT, "html")
+os.makedirs(HTML_DIR, exist_ok=True)
+DATA_DIR = os.path.join(REPO_ROOT, "data")
+os.makedirs(DATA_DIR, exist_ok=True)
+
 # ── Config ────────────────────────────────────────────────────────
 K              = 11     # number of vehicles / clusters
 MAX_ITERATIONS = 300   # safety cap — algorithm usually converges <20
@@ -69,7 +76,7 @@ def haversine(lat1, lon1, lat2, lon2):
 
 
 # ── Step 1: Load the dataset ──────────────────────────────────────
-input_file = "deliveries_london.csv"
+input_file = os.path.join(DATA_DIR, "deliveries_london.csv")
 
 if not os.path.exists(input_file):
     print(f"ERROR: '{input_file}' not found.")
@@ -214,7 +221,7 @@ print(f"  {'Total':<5} {total_stops:>6} {total_parcels:>8}\n")
 
 
 # ── Step 5: Save clusters.csv ─────────────────────────────────────
-output_csv = "clusters.csv"
+output_csv = os.path.join(DATA_DIR, "clusters.csv")
 fieldnames = ["delivery_id", "customer_name", "postcode",
               "latitude", "longitude", "demand", "priority", "cluster"]
 
@@ -437,7 +444,7 @@ legend.addTo(map);
 </body>
 </html>"""
 
-map_file = "cluster_map.html"
+map_file = os.path.join(HTML_DIR, "cluster_map.html")
 with open(map_file, "w", encoding="utf-8") as f:
     f.write(html)
 
