@@ -1,0 +1,15 @@
+========================================================================
+  ROUTING SUMMARY — OSRM matrix + OR-Tools
+========================================================================
+
+  Clusters file       : D:\VS-Projects\VRP\data\clusters3.csv
+  OSRM_BASE           : http://127.0.0.1:5000
+  First solution      : PATH_CHEAPEST_ARC (greedy / NN-like)
+  Meta time limit/van : 10s
+
+  Total road km  greedy: 1495.18
+  Total road km  gls   : 1361.39  (+8.9% vs greedy)
+  Total road km  sa    : 1366.63  (+8.6% vs greedy)
+  Total road km  tabu  : 1365.31  (+8.7% vs greedy)
+
+  Per-van: D:\VS-Projects\VRP\data\ortools_osrm_summary.csv

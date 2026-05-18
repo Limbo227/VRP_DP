@@ -1,0 +1,7 @@
+==============================================================
+  ROUTING SUMMARY — OSRM road distance matrix + heuristics
+==============================================================
+
+  Clusters file : d:\VS-Projects\VRP\data\clusters3.csv
+  OSRM_BASE     : http://127.0.0.1:5000
+  Total road km : NN 1495.18  2opt 1405.85  RR 1367.25

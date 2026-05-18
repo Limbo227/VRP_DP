@@ -1,0 +1,12 @@
+method,total_haversine_km,total_csv_native_km,vs_ortools_gls_pct,solve_seconds,avg_order_match_vs_gls_pct
+ortools_hav_greedy,1044.956,,11.07,0.06,
+ortools_hav_gls,940.815,,0.0,90.02,100.0
+routes3_nn,1044.956,1044.955,11.07,,5.54
+routes3_2opt,966.135,966.135,2.69,,23.15
+routes3_rr2opt,941.854,941.854,0.11,,69.32
+routes_nn,748.068,748.068,-20.49,,0.0
+routes_2opt,727.895,727.895,-22.63,,0.0
+routes_rr2opt,725.836,725.836,-22.85,,0.0
+routes_osrm_nn,1042.589,1495.176,10.82,,7.57
+routes_osrm_2opt,988.498,1405.849,5.07,,9.61
+routes_osrm_rr2opt,966.289,1367.252,2.71,,19.13

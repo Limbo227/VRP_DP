@@ -1,0 +1,18 @@
+======================================================================
+  OSRM /trip vs matrix heuristics (road km)
+======================================================================
+
+  Clusters file : d:\VS-Projects\VRP\data\clusters3.csv
+  OSRM_BASE     : http://127.0.0.1:5000
+  Profile       : driving
+
+  Sum OSRM Trip distance (km)     : 1427.9220
+  Sum NN / 2-opt / RR (matrix km) : 1495.1761  1405.8489  1367.2517
+  Total gap NN − Trip (km)        : 67.2541
+  Total gap RR − Trip (km)        : -60.6703
+
+  Trip HTTP time (s) : 1.8981
+  Table HTTP time (s): 1.8254
+  Trip failures      : 0
+
+  Per-van table: d:\VS-Projects\VRP\data\osrm_engine_compare.csv

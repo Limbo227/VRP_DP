@@ -148,6 +148,7 @@ with open(input_file, newline="", encoding="utf-8") as f:
         row["latitude"]  = float(row["latitude"])
         row["longitude"] = float(row["longitude"])
         row["demand"]    = int(row["demand"])
+        row["quality"]   = int(row["quality"])   # postcodes.io geocode quality (1=best, 8=postcode only)
         if row["delivery_id"] == "DEPOT":
             depot = row
         else:
@@ -223,9 +224,9 @@ print(f"  {'Total':<5} {sum(s['stops'] for s in cluster_stats):>6} "
 depot["cluster"] = -1
 all_rows         = [depot] + stops
 fieldnames       = ["delivery_id", "customer_name", "postcode",
-                    "latitude", "longitude", "demand", "priority", "cluster"]
+                    "quality", "latitude", "longitude", "demand", "priority", "cluster"]
 
-output_csv = os.path.join(DATA_DIR, "clusters.csv")
+output_csv = os.path.join(DATA_DIR, "clusters2.csv")
 with open(output_csv, "w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
@@ -273,7 +274,8 @@ for c_id, cluster_stops in enumerate(final_clusters):
                         f"Customer: {stop['customer_name']}<br>"
                         f"Postcode: {stop['postcode']}<br>"
                         f"Demand: {stop['demand']} parcel(s)<br>"
-                        f"Priority: {stop['priority'].upper()}"),
+                        f"Priority: {stop['priority'].upper()}<br>"
+                        f"Geocode quality: {stop['quality']} / 8"),
         })
 
 map_lat      = sum(s["latitude"]  for s in stops) / len(stops)

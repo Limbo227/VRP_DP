@@ -1,0 +1,369 @@
+==============================================================
+  ROUTING SUMMARY — DPD Hinckley
+==============================================================
+
+  Input file : d:\VS-Projects\VRP\data\clusters3.csv
+  Depot      : LE10 3BQ
+  Total stops: 300
+  Vans       : 9
+  RR restarts: 50
+
+  ALGORITHM COMPARISON (total km across all vans)
+  Algorithm                   Total km     vs NN      Time
+  -------------------------------------------------------
+  Nearest Neighbour            1044.96  baseline  0.0072s
+  2-opt (from NN)               966.13      7.5%  1.0778s
+  Random Restart 2-opt          941.85      9.9%  63.5945s
+
+  PER-VAN BREAKDOWN
+  Van   Stops        NN     2-opt   RR-2opt      Best
+  -------------------------------------------------------
+  Van 0     54    114.31    103.63    102.54   RR-2opt
+  Van 1     40    119.29    111.78    101.84   RR-2opt
+  Van 2     51    153.94    147.03    141.10   RR-2opt
+  Van 3      7     94.83     94.08     93.72   RR-2opt
+  Van 4     22    161.09    154.09    151.94   RR-2opt
+  Van 5     35     91.45     69.24     68.58   RR-2opt
+  Van 6     46    103.30     99.20     96.99   RR-2opt
+  Van 7     16     87.33     82.41     82.29   RR-2opt
+  Van 8     29    119.41    104.67    102.84   RR-2opt
+
+  ROUTE ORDER PER VAN (Random Restart 2-opt — best result)
+
+  Van 0  (54 stops, 102.54 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D154     CV13 6LJ   Priya Morris
+     2. D247     CV13 6JY   Sarah Nwosu
+     3. D107     CV11 6JY   Daniel Evans
+     4. D284     CV11 9FD   Sarah Morris
+     5. D097     CV10 7EX   Lucas Thomas
+     6. D131     CV10 8BN   Aaron Walker
+     7. D001     CV10 7RY   James Davis
+     8. D110     CV10 7HW   Aisha Morris
+     9. D168     CV12 0HL   Daniel Jones
+    10. D042     CV6 4FX    James Patel
+    11. D067     CV6 2HW    Isabella Ahmed
+    12. D111     CV6 2LQ    Sophia Walker
+    13. D108     CV5 9GG    Nadia Smith
+    14. D078     CV5 7BQ    Chloe Hill
+    15. D128     CV7 7LB    Liam Brown
+    16. D222     CV4 9GY    Aiden Kaur
+    17. D087     CV4 9WG    George Hussain
+    18. D292     CV4 9UD    George Hussain
+    19. D036     CV4 8LN    Charlotte Taylor
+    20. D116     CV4 9JF    Oliver Taylor
+    21. D257     CV4 8JB    James Singh
+    22. D069     CV8 2TB    Aisha Hussain
+    23. D084     CV4 7BX    Aaron Singh
+    24. D224     CV4 8FL    Harry Walker
+    25. D145     CV4 8LS    Mia Kaur
+    26. D269     CV4 9BG    Noah Clarke
+    27. D283     CV4 9FW    Charlotte Clarke
+    28. D255     CV5 7AH    Sophia Wilson
+    29. D233     CV5 9JB    Aisha Ahmed
+    30. D060     CV5 9NS    Daniel Brown
+    31. D075     CV5 8HT    Lucas Davis
+    32. D073     CV5 8BW    Yasmin Roberts
+    33. D252     CV5 6GG    George Taylor
+    34. D048     CV5 6NP    Fatima Jones
+    35. D121     CV1 3BJ    Noah Patel
+    36. D003     CV1 4GZ    Sophia Smith
+    37. D295     CV1 4DR    Zara Roberts
+    38. D299     CV1 4GN    Noah Roberts
+    39. D260     CV1 4JD    Chloe Khan
+    40. D105     CV1 5LZ    Harry Taylor
+    41. D280     CV1 2XL    Sophia Patel
+    42. D275     CV3 5LN    Zara Kaur
+    43. D253     CV3 4DA    Aaron Brown
+    44. D149     CV4 8YU    Tyler Thomas
+    45. D133     CV3 3DW    Charlotte Morris
+    46. D288     CV3 2RS    Nadia Thomas
+    47. D172     CV2 2JA    Simran Rahman
+    48. D201     CV2 2EY    Fatima Walker
+    49. D026     CV2 3AZ    Ethan Osei
+    50. D278     CV2 3JD    Mohammed Iqbal
+    51. D053     CV2 3GZ    Tyler Jones
+    52. D021     CV2 4PY    Aisha Iqbal
+    53. D229     CV6 5JB    Mohammed Sharma
+    54. D287     CV6 6NZ    Sarah Shah
+    55. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 1  (40 stops, 101.84 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D016     LE2 9LT    Oliver Iqbal
+     2. D046     LE2 7NE    Ethan Ahmed
+     3. D249     LE1 7RJ    Emily Sharma
+     4. D002     LE2 0LF    Priya Kaur
+     5. D115     LE1 6NB    Aiden Williams
+     6. D127     LE1 1DN    Isabella Khan
+     7. D220     LE1 5BJ    Nadia Roberts
+     8. D159     LE1 5WR    Lucas Khan
+     9. D011     LE3 5QA    Yasmin Jones
+    10. D207     LE3 6FJ    Tyler Johnson
+    11. D188     LE4 4ED    Yasmin Williams
+    12. D010     LE4 3JD    Mia Kaur
+    13. D008     LE7 7QY    Oliver Hussain
+    14. D157     LE7 7NA    Aiden Thomas
+    15. D101     LE7 1NF    Aiden Smith
+    16. D076     LE7 2AW    Noah Shah
+    17. D167     LE4 8FD    James Begum
+    18. D072     LE4 8BE    Mohammed Begum
+    19. D296     LE4 7ZJ    Amelia Johnson
+    20. D208     LE4 9BA    Mohammed Roberts
+    21. D234     LE5 1HN    Mia Osei
+    22. D231     LE5 4LJ    Amelia Hussain
+    23. D130     LE5 4HJ    Mia Clarke
+    24. D070     LE5 5BS    Leon Roberts
+    25. D239     LE5 6DL    Sarah Williams
+    26. D022     LE2 2PB    James Williams
+    27. D300     LE2 5UA    Mia Roberts
+    28. D162     LE2 4QQ    Zara Patel
+    29. D166     LE8 0PT    Tyler Rahman
+    30. D140     LE8 8DG    Daniel Nwosu
+    31. D297     LE8 8AP    Tyler Patel
+    32. D012     LE8 8ER    James Jones
+    33. D265     LE18 3SH   Isabella Nwosu
+    34. D051     LE18 3YP   Aaron Osei
+    35. D206     LE18 1PJ   Noah Hussain
+    36. D204     LE18 4ZH   Simran Morris
+    37. D189     LE18 4NJ   Harry Kowalski
+    38. D244     LE8 5RF    Lucas Roberts
+    39. D095     LE8 5RG    Zara Jones
+    40. D045     LE8 4BS    Daniel Rahman
+    41. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 2  (51 stops, 141.10 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D050     NG11 9HH   Lucas Brown
+     2. D289     NG11 8LQ   Mia Kowalski
+     3. D014     NG11 7AU   Priya Sharma
+     4. D059     NG11 7AE   Liam Brown
+     5. D142     NG2 1PF    Zara Williams
+     6. D211     NG7 2EW    Yasmin Evans
+     7. D085     NG7 2GA    Aaron Iqbal
+     8. D195     NG7 3BS    Mia Khan
+     9. D044     NG7 4FN    Zara Osei
+    10. D218     NG7 6NA    Aisha Shah
+    11. D092     NG7 6HS    Harry Begum
+    12. D144     NG7 7LW    Mohammed Patel
+    13. D006     NG7 5PJ    Zara Brown
+    14. D062     NG8 3FJ    Zara Patel
+    15. D017     NG8 6QH    Charlotte Iqbal
+    16. D123     NG8 5NL    Yasmin Smith
+    17. D083     NG8 5DG    George Taylor
+    18. D068     NG6 0HG    Isabella Smith
+    19. D198     NG7 7DN    Priya Rahman
+    20. D196     NG5 1GW    Fatima Kaur
+    21. D177     NG6 0EF    Aiden Kowalski
+    22. D063     NG6 0EP    Ethan Osei
+    23. D273     NG6 9GP    Zara Roberts
+    24. D004     NG6 9FT    Tyler Rahman
+    25. D161     NG6 9HL    Aisha Nwosu
+    26. D019     NG6 8SP    Aiden Wilson
+    27. D091     NG6 8GP    Sophia Thomas
+    28. D064     NG5 5DG    Yasmin Osei
+    29. D228     NG5 9QL    Yasmin Hussain
+    30. D282     NG5 5JR    Yasmin Hussain
+    31. D056     NG5 8LR    Ravi Ahmed
+    32. D126     NG5 8UB    Sarah Iqbal
+    33. D099     NG3 5GR    Noah Osei
+    34. D180     NG5 4LX    Yasmin Brown
+    35. D238     NG3 5QF    Emily Patel
+    36. D270     NG3 6BS    Ethan Clarke
+    37. D276     NG3 6FL    Zara Davis
+    38. D259     NG3 6BY    Liam Kaur
+    39. D242     NG3 2LL    Ravi Williams
+    40. D023     NG3 3GG    George Wilson
+    41. D113     NG3 4PN    Daniel Roberts
+    42. D039     NG1 4BA    Charlotte Walker
+    43. D118     NG1 7AQ    Sarah Iqbal
+    44. D175     NG3 1JG    Ethan Taylor
+    45. D098     NG2 4DE    Aiden Nwosu
+    46. D027     NG2 3LY    Noah Patel
+    47. D227     NG2 5FF    Lucas Khan
+    48. D124     NG2 9SN    Isabella Evans
+    49. D286     NG2 7RD    Yasmin Williams
+    50. D200     NG2 6GA    Amelia Singh
+    51. D141     NG2 6GP    Aisha Ahmed
+    52. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 3  (7 stops, 93.72 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D291     NG10 3AZ   Amelia Smith
+     2. D071     NG10 3JG   Simran Ali
+     3. D254     NG10 5LQ   Noah Nwosu
+     4. D047     NG10 5GT   Tyler Shah
+     5. D148     NG9 8PD    Lucas Khan
+     6. D160     NG10 4HZ   Aiden Williams
+     7. D165     NG10 1DA   Sophia Brown
+     8. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 4  (22 stops, 151.94 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D013     NG16 1HD   Nadia Hussain
+     2. D215     NG15 6WY   Simran Clarke
+     3. D079     NG15 7LJ   Fatima Begum
+     4. D077     NG15 7NN   Leon Khan
+     5. D210     NG15 7FY   Yasmin Johnson
+     6. D245     NG15 5DH   Sarah Hussain
+     7. D171     NG15 7AT   Sarah Begum
+     8. D147     NG15 7BJ   Daniel Ali
+     9. D267     NG15 8GG   Mohammed Osei
+    10. D174     NG15 8NA   Fatima Roberts
+    11. D248     NG17 9AE   Aisha Taylor
+    12. D194     NG17 5LF   Aiden Begum
+    13. D155     NG17 4PJ   Mohammed Evans
+    14. D156     NG17 4LP   Aiden Davis
+    15. D086     NG17 3NE   Sarah Morris
+    16. D203     NG17 1LU   Mia Hussain
+    17. D005     NG17 8JA   Leon Singh
+    18. D230     NG16 6HN   Noah Hill
+    19. D134     NG16 3SB   Mia Kaur
+    20. D136     NG16 3PS   Priya Ahmed
+    21. D028     NG16 2DL   Harry Kowalski
+    22. D256     NG16 2RN   Aisha Nwosu
+    23. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 5  (35 stops, 68.58 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D120     LE10 3JJ   James Rahman
+     2. D061     LE9 4LY    Zara Thomas
+     3. D262     LE9 6TR    Lucas Walker
+     4. D250     LE19 2GP   Liam Sharma
+     5. D007     LE19 2GB   Amelia Osei
+     6. D049     LE19 2DW   Emily Hill
+     7. D041     LE19 2JQ   Fatima Sharma
+     8. D243     LE8 6XT    Noah Patel
+     9. D209     LE8 4AP    Ravi Thomas
+    10. D272     LE8 4PD    Sarah Sharma
+    11. D031     LE8 6HL    Harry Johnson
+    12. D241     LE19 2AJ   George Kaur
+    13. D037     LE2 9DS    Lucas Roberts
+    14. D263     LE3 2RY    Chloe Sharma
+    15. D030     LE19 1TP   Mia Davis
+    16. D135     LE5 9NQ    Ravi Taylor
+    17. D281     LE19 4DX   Aisha Williams
+    18. D137     LE19 4EN   Priya Smith
+    19. D235     LE3 3PX    Simran Clarke
+    20. D106     LE3 3JS    Chloe Thomas
+    21. D279     LE3 6QZ    Zara Williams
+    22. D096     LE3 8DD    Mia Sharma
+    23. D190     LE6 0EB    Chloe Brown
+    24. D232     LE6 0BY    Leon Begum
+    25. D164     LE6 0FP    Aaron Patel
+    26. D217     LE6 0LG    Fatima Begum
+    27. D138     LE6 0XD    Daniel Clarke
+    28. D266     LE9 9NT    Aisha Williams
+    29. D169     LE9 7TG    Sophia Thomas
+    30. D163     LE9 7BA    Mia Shah
+    31. D182     LE9 7EP    Lucas Kowalski
+    32. D181     LE9 7ND    Amelia Davis
+    33. D033     LE9 8JH    Oliver Thomas
+    34. D285     LE10 9HH   Liam Hussain
+    35. D193     LE10 9TZ   Yasmin Davis
+    36. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 6  (46 stops, 96.99 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D055     B9 4EH     Aaron Shah
+     2. D081     B5 5SU     Leon Smith
+     3. D225     B12 0NB    Noah Kowalski
+     4. D185     B12 0NX    Aiden Kaur
+     5. D040     B12 0NH    Mohammed Iqbal
+     6. D100     B12 0BA    Aaron Roberts
+     7. D009     B12 0TS    Amelia Shah
+     8. D024     B12 9PW    Mia Thomas
+     9. D298     B12 9NQ    Aaron Clarke
+    10. D271     B5 7DQ     Lucas Walker
+    11. D258     B5 6RG     James Jones
+    12. D192     B2 4PY     Mia Rahman
+    13. D219     B1 1DW     Tyler Begum
+    14. D261     B15 2DD    Aaron Singh
+    15. D052     B1 2HT     Leon Kowalski
+    16. D103     B1 2DS     Nadia Wilson
+    17. D032     B1 3LS     Ethan Rahman
+    18. D025     B3 1BA     Zara Clarke
+    19. D221     B3 1TT     Chloe Brown
+    20. D290     B3 1UD     Priya Wilson
+    21. D020     B18 6AQ    Amelia Begum
+    22. D197     B18 7LQ    Sarah Shah
+    23. D066     B1 2UH     Aaron Ali
+    24. D065     B16 9EB    Isabella Smith
+    25. D152     B16 6NR    Aaron Shah
+    26. D202     B16 8WD    Priya Jones
+    27. D038     B15 3NX    Harry Evans
+    28. D264     B15 3TT    Lucas Begum
+    29. D112     B15 3JB    Chloe Hill
+    30. D205     B17 0TJ    Lucas Begum
+    31. D104     B17 0BX    Tyler Clarke
+    32. D187     B17 9JN    Emily Brown
+    33. D082     B15 3AZ    Fatima Brown
+    34. D277     B16 0LT    Liam Hussain
+    35. D117     B21 9BN    Chloe Morris
+    36. D237     B21 9AP    Ravi Thomas
+    37. D080     B20 3PY    Aaron Smith
+    38. D150     B6 5BP     James Khan
+    39. D102     B2 2PL     Priya Evans
+    40. D029     B2 2RX     Amelia Thomas
+    41. D109     B3 2PY     Fatima Ali
+    42. D158     B2 2BE     Aisha Ali
+    43. D184     B6 4HZ     Fatima Nwosu
+    44. D035     B4 7FN     Sophia Iqbal
+    45. D216     B6 4AH     Aaron Sharma
+    46. D034     B7 4NP     Mia Morris
+    47. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 7  (16 stops, 82.29 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D143     B90 4BB    Ravi Brown
+     2. D178     B90 2QP    Leon Smith
+     3. D176     B90 2JT    Yasmin Khan
+     4. D054     B14 4EE    Noah Shah
+     5. D183     B14 4JT    Daniel Ahmed
+     6. D114     B14 7QE    Noah Ahmed
+     7. D223     B14 7RP    Oliver Brown
+     8. D088     B13 8LN    Daniel Taylor
+     9. D146     B12 8TG    Lucas Williams
+    10. D199     B12 8UY    Emily Davis
+    11. D153     B13 9YX    Harry Begum
+    12. D151     B11 4AR    Aaron Hussain
+    13. D125     B11 3AP    Priya Patel
+    14. D251     B11 3BY    Mohammed Iqbal
+    15. D018     B11 3NJ    James Hussain
+    16. D057     B10 0LL    Mohammed Rahman
+    17. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+  Van 8  (29 stops, 102.84 km)
+     0. DEPOT    LE10 3BQ   DPD Hinckley Depot
+     1. D094     B75 6EL    Zara Singh
+     2. D294     B74 4NS    Chloe Walker
+     3. D129     B74 4TA    Mohammed Ahmed
+     4. D226     B73 6BJ    Chloe Nwosu
+     5. D213     B73 6JG    Daniel Johnson
+     6. D173     B73 6PW    Zara Iqbal
+     7. D139     B73 6PY    Emily Ahmed
+     8. D122     B23 5FG    Daniel Brown
+     9. D015     B23 6HS    Yasmin Patel
+    10. D119     B23 6GD    Fatima Singh
+    11. D293     B23 6AE    Liam Kaur
+    12. D268     B23 7SW    Mia Brown
+    13. D074     B6 7EE     Noah Ali
+    14. D058     B6 6NS     Noah Davis
+    15. D089     B6 6SB     Sarah Rahman
+    16. D246     B7 5DR     Emily Ali
+    17. D191     B7 5RX     Mohammed Evans
+    18. D132     B8 1HQ     Simran Roberts
+    19. D212     B8 3AT     Ethan Morris
+    20. D090     B8 3QS     Nadia Morris
+    21. D093     B24 8JP    Yasmin Thomas
+    22. D240     B24 9PS    Ethan Roberts
+    23. D179     B8 2BH     Leon Morris
+    24. D043     B8 2UG     Mia Nwosu
+    25. D186     B9 5QD     Ethan Hussain
+    26. D274     B10 9PU    Aiden Iqbal
+    27. D170     B25 8DT    Leon Kowalski
+    28. D214     B92 8JE    Noah Smith
+    29. D236     B91 3NX    Ravi Iqbal
+    30. DEPOT    LE10 3BQ   DPD Hinckley Depot
+
+==============================================================

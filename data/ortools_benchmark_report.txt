@@ -1,0 +1,43 @@
+================================================================
+  OR-Tools benchmark report
+================================================================
+  clusters: d:\VS-Projects\VRP\data\clusters3.csv
+  stops: 300  vans: 9
+
+  TOTAL DISTANCE (Haversine along each CSV visit order)
+  Method                         km      vs GLS   solve/s
+  ------------------------------------------------------
+  ortools_hav_greedy        1044.96      +11.1%      0.06
+  ortools_hav_gls            940.81       +0.0%     90.02
+
+  REFERENCE CSVs (existing pipeline outputs)
+  Method                 Haversine km  CSV total km    order~GLS%
+  --------------------------------------------------------------
+  routes3_nn                  1044.96       1044.95           5.5
+  routes3_2opt                 966.13        966.13          23.1
+  routes3_rr2opt               941.85        941.85          69.3
+  routes_nn                    748.07        748.07           0.0
+  routes_2opt                  727.89        727.89           0.0
+  routes_rr2opt                725.84        725.84           0.0
+  routes_osrm_nn              1042.59       1495.18           7.6
+  routes_osrm_2opt             988.50       1405.85           9.6
+  routes_osrm_rr2opt           966.29       1367.25          19.1
+
+  ORDER vs OR-Tools GLS (per van, % positions with same delivery_id)
+  Van      routes3_nn  routes3_2opt  routes3_rr2o     routes_nn   routes_2opt  routes_rr2op  routes_osrm_  routes_osrm_  routes_osrm_
+  -----------------------------------------------------------------------------------------------------------------------------------
+  0             5.6         3.7         0.0         0.0         0.0         0.0         3.7         5.6         9.3
+  1             2.5         0.0       100.0         0.0         0.0         0.0         2.5         2.5        10.0
+  2             9.8        11.8        80.4         0.0         0.0         0.0        11.8         0.0         0.0
+  3            28.6        14.3       100.0         0.0         0.0         0.0        14.3        14.3        14.3
+  4             0.0        77.3       100.0         0.0         0.0         0.0         4.5         4.5        90.9
+  5             0.0        54.3       100.0         0.0         0.0         0.0         2.9        28.6         2.9
+  6             0.0         2.2        43.5         0.0         0.0         0.0         0.0         0.0         0.0
+  7             0.0         0.0         0.0         0.0         0.0         0.0        25.0         0.0         0.0
+  8             3.4        44.8       100.0         0.0         0.0         0.0         3.4        31.0        44.8
+
+  Notes:
+  - Haversine km recomputed from CSV lat/lon (fair compare).
+  - CSV total km = last route_km_so_far (OSRM matrix for routes_osrm_*).
+  - order~GLS% = same stop index vs OR-Tools GLS sequence.
+================================================================

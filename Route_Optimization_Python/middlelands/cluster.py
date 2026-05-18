@@ -91,6 +91,7 @@ with open(input_file, newline="", encoding="utf-8") as f:
         row["latitude"]  = float(row["latitude"])
         row["longitude"] = float(row["longitude"])
         row["demand"]    = int(row["demand"])
+        row["quality"]   = int(row["quality"])   # postcodes.io geocode quality (1=best, 8=postcode only)
         if row["delivery_id"] == "DEPOT":
             depot = row
         else:
@@ -223,7 +224,7 @@ print(f"  {'Total':<5} {total_stops:>6} {total_parcels:>8}\n")
 # ── Step 5: Save clusters.csv ─────────────────────────────────────
 output_csv = os.path.join(DATA_DIR, "clusters.csv")
 fieldnames = ["delivery_id", "customer_name", "postcode",
-              "latitude", "longitude", "demand", "priority", "cluster"]
+              "quality", "latitude", "longitude", "demand", "priority", "cluster"]
 
 # Write depot first (cluster = -1 means it belongs to no cluster)
 depot["cluster"] = -1
@@ -278,7 +279,8 @@ for stop in stops:
                    f"Customer: {stop['customer_name']}<br>"
                    f"Postcode: {stop['postcode']}<br>"
                    f"Demand: {stop['demand']} parcel(s)<br>"
-                   f"Priority: {stop['priority'].upper()}"),
+                   f"Priority: {stop['priority'].upper()}<br>"
+                   f"Geocode quality: {stop['quality']} / 8"),
     })
 
 # Map centre

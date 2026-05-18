@@ -38,7 +38,7 @@ DATA_DIR = os.path.join(REPO_ROOT, "data")
 os.makedirs(DATA_DIR, exist_ok=True)
 
 # ── Config ─────────────────────────────────────────────────────────
-INPUT_FILE    = os.path.join(DATA_DIR, "clusters.csv")
+INPUT_FILE    = os.path.join(DATA_DIR, "clusters2.csv")
 RANDOM_SEED   = 42
 RR_RESTARTS   = 50        # how many random restarts for Algorithm 3
 
